@@ -1,15 +1,21 @@
 # Mosaic
 
-This utility can be used to generate [photo-mosaic](http://en.wikipedia.org/wiki/Photographic_mosaic) images, to use it you must have Python installed, along with the [Pillow](http://pillow.readthedocs.org/en/latest/) imaging library.
+This project is used to create mosaic of your chosen images from a set of tiles.
+A mosaic is a collection of images put together to make it look like another image. 
 
-As well as an image to use for the photo-mosaic ([most common image formats are supported](http://pillow.readthedocs.org/en/latest/handbook/image-file-formats.html)), you will need a large collection of different images to be used as tiles. The tile images can be any shape or size (the utility will automatically crop and resize them) but for good results you will need a lot of them - a few hundred at least. One convenient way of generating large numbers of tile images is to [extract screenshots from video files](https://trac.ffmpeg.org/wiki/Create%20a%20thumbnail%20image%20every%20X%20seconds%20of%20the%20video) using [ffmpeg](https://www.ffmpeg.org/).
+To make these you need to have many pictures of different color combinations. Something like every frame of a movie, or any other images.
+Just make sure the no. of images are atleast 100.
 
-Run the utility from the command line, as follows:
+We will use Pillow Library of Pythonfor working with the images.
+
+Do not worry about the size of image, as the script will crop and resize them before generating the results.
+
+Enter this in command line to run the script, as follows:
 
 <pre>python mosaic.py &lt;image_file_path&gt; &lt;tiles_directory&gt;
 </pre>
 
-*   The `image` argument should contain the path to the image for which you want to build the mosaic
+*   The `image_file_path` argument should contain the path to the image for which you want to build the mosaic.
 *   The `tiles directory` argument should contain the path to the directory containing the tile images (the directory will be searched recursively, so it doesn't matter if some of the images are contained in sub-directories)
 *   Make sure the parent directory of ```mosaic.py``` and the directories image, tiles is same.
 
@@ -26,8 +32,8 @@ The images below show an example of how the mosaic tiles are matched to the deta
 [![Mosaic Image Detail](rick-morty/ouput.png)](rick-morty/result/result.jpeg)  
 
 
-Producing large, highly detailed mosaics can take some time - you should experiment with the various [configuration parameters](https://github.com/codebox/mosaic/blob/master/mosaic.py#L6) explained in the source code to find the right balance between image quality and render time.
+Explaining the code:
 
-In particular the [TILE_MATCH_RES](https://github.com/codebox/mosaic/blob/master/mosaic.py#L8) parameter can have a big impact on both these factors - its value determines how closely the program examines each tile when trying to find the best fit for a particular segment of the image. Setting TILE_MATCH_RES to '1' simply finds the average colour of each tile, and picks the one that most closely matches the average colour of the image segment. As the value is increased, the tile is examined in more detail. Setting TILE_MATCH_RES to equal TILE_SIZE will cause the utility to examine each pixel in the tile individually, producing the best possible match (during my testing I didn't find a very noticeable improvement beyond a value of 5, but YMMV).
-
-By default the utility will configure itself to use all available CPUs/CPU-cores on the host system, if you want to leave some processing power spare for other tasks then adjust the [WORKER_COUNT](https://github.com/codebox/mosaic/blob/master/mosaic.py#L12) parameter accordingly.
+The uses of variables is given in the python script itsel.
+We created a class named TileProcessor and in that class the first method is process style process tile this method. This method crops the images off the tiles that are used for making the whole mosaic.
+Next we have get tiles in which we declared two lists. Using the os packet package we will Traverse through the tile directory and segregate images into large and small tiles. Now we talked about a new class named TargetImage this has a get data method which will increase the size of the original image and return a list small image and large image. 
