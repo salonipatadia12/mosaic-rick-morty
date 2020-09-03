@@ -1,4 +1,4 @@
-# mosaic
+# Mosaic
 
 This utility can be used to generate [photo-mosaic](http://en.wikipedia.org/wiki/Photographic_mosaic) images, to use it you must have Python installed, along with the [Pillow](http://pillow.readthedocs.org/en/latest/) imaging library.
 
@@ -23,7 +23,7 @@ The images below show an example of how the mosaic tiles are matched to the deta
 <span class="smallText">Original</span>
 
 [![Mosaic Image Detail](rick-morty/ouput.png)](rick-morty/result/result.jpeg)  
-<span class="smallText">Mosaic Detail (click through for [full mosaic](rick-morty/result/result.jpeg) ~25MB)</span>
+
 
 Producing large, highly detailed mosaics can take some time - you should experiment with the various [configuration parameters](https://github.com/codebox/mosaic/blob/master/mosaic.py#L6) explained in the source code to find the right balance between image quality and render time.
 
