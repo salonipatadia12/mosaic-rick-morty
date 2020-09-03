@@ -6,11 +6,12 @@ As well as an image to use for the photo-mosaic ([most common image formats are 
 
 Run the utility from the command line, as follows:
 
-<pre>python mosaic.py &lt;image&gt; &lt;tiles directory&gt;
+<pre>python mosaic.py &lt;image_file_path&gt; &lt;tiles_directory&gt;
 </pre>
 
 *   The `image` argument should contain the path to the image for which you want to build the mosaic
 *   The `tiles directory` argument should contain the path to the directory containing the tile images (the directory will be searched recursively, so it doesn't matter if some of the images are contained in sub-directories)
+*   Make sure the parent directory of ```mosaic.py``` and the directories image, tiles is same.
 
 For example:
 
