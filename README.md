@@ -22,8 +22,8 @@ The images below show an example of how the mosaic tiles are matched to the deta
 ![Mosaic Image](rick-morty/images/tu.jpg)  
 <span class="smallText">Original</span>
 
-[![Mosaic Image Detail](rick-morty/ouput.png)](https://codebox.net/assets/images/mosaic/mosaic_large.jpg)  
-<span class="smallText">Mosaic Detail (click through for [full mosaic](https://codebox.net/assets/images/mosaic/mosaic_large.jpg) ~15MB)</span>
+[![Mosaic Image Detail](rick-morty/ouput.png)](rick-morty/result/result.jpeg)  
+<span class="smallText">Mosaic Detail (click through for [full mosaic](rick-morty/result/result.jpeg) ~25MB)</span>
 
 Producing large, highly detailed mosaics can take some time - you should experiment with the various [configuration parameters](https://github.com/codebox/mosaic/blob/master/mosaic.py#L6) explained in the source code to find the right balance between image quality and render time.
 
