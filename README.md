@@ -29,7 +29,7 @@ The images below show an example of how the mosaic tiles are matched to the deta
 ![Mosaic Image](rick-morty/images/tu.jpg)  
 <span class="smallText">Original</span>
 
-[![Mosaic Image Detail](rick-morty/ouput.png)](rick-morty/result/result.jpeg)  
+[![Mosaic Image Detail](rick-morty/morty.png)](rick-morty/result/result.jpeg)  
 
 
 Explaining the code:
